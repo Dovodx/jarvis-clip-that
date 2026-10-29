@@ -77,13 +77,7 @@ add_library(miniaudio STATIC "${DEPS_DIR}/miniaudio-${MINIAUDIO_VERSION}/miniaud
 target_include_directories(miniaudio PUBLIC "${DEPS_DIR}/miniaudio-${MINIAUDIO_VERSION}")
 target_compile_definitions(
   miniaudio
-  PUBLIC
-    MA_NO_DECODING
-    MA_NO_ENCODING
-    MA_NO_GENERATION
-    MA_NO_RESOURCE_MANAGER
-    MA_NO_NODE_GRAPH
-    MA_NO_ENGINE
+  PUBLIC MA_NO_DECODING MA_NO_ENCODING MA_NO_GENERATION MA_NO_RESOURCE_MANAGER MA_NO_NODE_GRAPH MA_NO_ENGINE
 )
 set_target_properties(miniaudio PROPERTIES POSITION_INDEPENDENT_CODE ON COMPILE_WARNING_AS_ERROR OFF)
 target_compile_options(miniaudio PRIVATE $<IF:$<C_COMPILER_ID:MSVC>,/W0,-w>)
